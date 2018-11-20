@@ -9,10 +9,12 @@ window.onload= function(){
                     alert(this.responseText);
                 }
             };
-
+            if (document.getElementById("all").checked){
+                xml.open("GET", "world.php?all=true",true);
+            } else{ 
                 xml.open("GET", "world.php?country=" + document.getElementById("country").value, true)
-           
-           xml.send(); 
+            }
+            xml.send(); 
         });
     }
     main();
